@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance &#8212; Coding and Humanities and Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Overlapping" href="overlap.html" />
+    <link rel="prev" title="Constructor and Destructor" href="cons.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/shanmu.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding and Humanities and Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="course.html">
+   Courses
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="basics/basic.html">
+     Basic Python
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="syllabus.html">
+       Sample Syllabus
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="pyintro.html">
+       Python Introduction
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="identifier.html">
+         Identifiers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="lines.html">
+         Lines and Indention
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="stmnt.html">
+         Statements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="operators.html">
+         Operators
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="datatypes.html">
+       Datatypes
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="numbers.html">
+         Numbers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dboolean.html">
+         Boolean
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dstrings.html">
+         Strings
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dlists.html">
+         Lists
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dset.html">
+         Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dtuple.html">
+         Tuples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dictionary.html">
+         Dictionaries
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="control.html">
+       Control Statements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="files.html">
+       File
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="function.html">
+       Functions
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="usr.html">
+         User Defined Function
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="lambda.html">
+         Lambda Function
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 current active collapsible-parent">
+      <a class="reference internal" href="oop.html">
+       OOPS Concept
+      </a>
+      <ul class="current collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="classes.html">
+         Classes and Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="cons.html">
+         Constructor and Destructor
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Inheritance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="overlap.html">
+         Overlapping
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="overload.html">
+         Overloading
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regular.html">
+       Regular Expression
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="except.html">
+       Exception Handling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="threads.html">
+       Threads
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/inherit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dharanpreethi/R-Mallet"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dharanpreethi/R-Mallet/issues/new?title=Issue%20on%20page%20%2Finherit.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dharanpreethi/R-Mallet/master?urlpath=tree/docs/inherit.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   Example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#types-of-inheritance">
+   Types of inheritance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-inheritance">
+     Single inheritance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-inheritance">
+     Multiple Inheritance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multilevel-inheritance">
+     Multilevel Inheritance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-inheritance">
+   Hierarchical Inheritance
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hybrid-inheritance">
+   Hybrid Inheritance
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="inheritance">
+<h1>Inheritance<a class="headerlink" href="#inheritance" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>For instance, we are humans. We inherit certain properties from the class ‘Human’ such as the ability to speak, breathe, eat, drink, etc.</p></li>
+<li><p>We can also take the example of cars.</p></li>
+<li><p>The class ‘Car’ inherits its properties from the class ‘Automobiles’ which inherits some of its properties from another class ‘Vehicles’.</p></li>
+</ul>
+<p><img alt="" src="_images/inh.png" /></p>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="nf">pname</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;person&quot;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Employee</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>   <span class="c1">#Employee class inherits person class</span>
+
+    <span class="k">def</span> <span class="nf">ename</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;employee&quot;</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">Employee</span><span class="p">()</span>
+<span class="n">y</span><span class="o">.</span><span class="n">pname</span><span class="p">()</span>
+<span class="n">y</span><span class="o">.</span><span class="n">ename</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>person
+employee
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="types-of-inheritance">
+<h2>Types of inheritance<a class="headerlink" href="#types-of-inheritance" title="Permalink to this headline">¶</a></h2>
+<p><img alt="" src="_images/typesinh.png" /></p>
+<div class="section" id="single-inheritance">
+<h3>Single inheritance<a class="headerlink" href="#single-inheritance" title="Permalink to this headline">¶</a></h3>
+<p>Single Inheritance: Single inheritance enables a derived class to inherit properties from a single parent class, thus enabling code reusability and the addition of new features to existing code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+     <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in parent class.&quot;</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+     <span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in child class.&quot;</span><span class="p">)</span>
+ 
+
+<span class="nb">object</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+<span class="nb">object</span><span class="o">.</span><span class="n">func1</span><span class="p">()</span>
+<span class="nb">object</span><span class="o">.</span><span class="n">func2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This function is in parent class.
+This function is in child class.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multiple-inheritance">
+<h3>Multiple Inheritance<a class="headerlink" href="#multiple-inheritance" title="Permalink to this headline">¶</a></h3>
+<p>When a class can be derived from more than one base class this type of inheritance is called multiple inheritance. In multiple inheritance, all the features of the base classes are inherited into the derived class.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Mother</span><span class="p">:</span>
+    <span class="n">mothername</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">mother</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mothername</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Father</span><span class="p">:</span>
+    <span class="n">fathername</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">father</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fathername</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Son</span><span class="p">(</span><span class="n">Mother</span><span class="p">,</span> <span class="n">Father</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Father :&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fathername</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mother :&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mothername</span><span class="p">)</span>
+ 
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Son</span><span class="p">()</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">fathername</span> <span class="o">=</span> <span class="s2">&quot;RAM&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">mothername</span> <span class="o">=</span> <span class="s2">&quot;SITA&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">parents</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Father : RAM
+Mother : SITA
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="multilevel-inheritance">
+<h3>Multilevel Inheritance<a class="headerlink" href="#multilevel-inheritance" title="Permalink to this headline">¶</a></h3>
+<p>In multilevel inheritance, features of the base class and the derived class are further inherited into the new derived class. This is similar to a relationship representing a child and grandfather.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Mother</span><span class="p">:</span>
+    <span class="n">mothername</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">mother</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mothername</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Father</span><span class="p">(</span><span class="n">Mother</span><span class="p">):</span>
+    <span class="n">fathername</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">father</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">fathername</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Son</span><span class="p">(</span><span class="n">Father</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">parents</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Father :&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">fathername</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mother :&quot;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">mothername</span><span class="p">)</span>
+ 
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Son</span><span class="p">()</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">fathername</span> <span class="o">=</span> <span class="s2">&quot;RAM&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">mothername</span> <span class="o">=</span> <span class="s2">&quot;SITA&quot;</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">parents</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Father : RAM
+Mother : SITA
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hierarchical-inheritance">
+<h2>Hierarchical Inheritance<a class="headerlink" href="#hierarchical-inheritance" title="Permalink to this headline">¶</a></h2>
+<p>When more than one derived classes are created from a single base this type of inheritance is called hierarchical inheritance. In this program, we have a parent (base) class and two child (derived) classes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>
+      <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in parent class.&quot;</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Child1</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+      <span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in child 1.&quot;</span><span class="p">)</span>
+ 
+
+<span class="k">class</span> <span class="nc">Child2</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>
+      <span class="k">def</span> <span class="nf">func3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in child 2.&quot;</span><span class="p">)</span>
+  
+
+<span class="n">object1</span> <span class="o">=</span> <span class="n">Child1</span><span class="p">()</span>
+<span class="n">object2</span> <span class="o">=</span> <span class="n">Child2</span><span class="p">()</span>
+<span class="n">object1</span><span class="o">.</span><span class="n">func1</span><span class="p">()</span>
+<span class="n">object1</span><span class="o">.</span><span class="n">func2</span><span class="p">()</span>
+<span class="n">object2</span><span class="o">.</span><span class="n">func1</span><span class="p">()</span>
+<span class="n">object2</span><span class="o">.</span><span class="n">func3</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This function is in parent class.
+This function is in child 1.
+This function is in parent class.
+This function is in child 2.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="hybrid-inheritance">
+<h2>Hybrid Inheritance<a class="headerlink" href="#hybrid-inheritance" title="Permalink to this headline">¶</a></h2>
+<p>Inheritance consisting of multiple types of inheritance is called hybrid inheritance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">School</span><span class="p">:</span>
+     <span class="k">def</span> <span class="nf">func1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in school.&quot;</span><span class="p">)</span>
+  
+<span class="k">class</span> <span class="nc">Student1</span><span class="p">(</span><span class="n">School</span><span class="p">):</span>
+     <span class="k">def</span> <span class="nf">func2</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in student 1. &quot;</span><span class="p">)</span>
+  
+<span class="k">class</span> <span class="nc">Student2</span><span class="p">(</span><span class="n">School</span><span class="p">):</span>
+     <span class="k">def</span> <span class="nf">func3</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in student 2.&quot;</span><span class="p">)</span>
+  
+<span class="k">class</span> <span class="nc">Student3</span><span class="p">(</span><span class="n">Student1</span><span class="p">,</span> <span class="n">School</span><span class="p">):</span>
+     <span class="k">def</span> <span class="nf">func4</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This function is in student 3.&quot;</span><span class="p">)</span>
+  
+
+<span class="nb">object</span> <span class="o">=</span> <span class="n">Student3</span><span class="p">()</span>
+<span class="nb">object</span><span class="o">.</span><span class="n">func1</span><span class="p">()</span>
+<span class="nb">object</span><span class="o">.</span><span class="n">func2</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This function is in school.
+This function is in student 1. 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="cons.html" title="previous page">Constructor and Destructor</a>
+    <a class='right-next' id="next-link" href="overlap.html" title="next page">Overlapping</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shanmugapriya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

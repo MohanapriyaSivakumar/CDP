@@ -1,0 +1,835 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings &#8212; Coding and Humanities and Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lists" href="dlists.html" />
+    <link rel="prev" title="Boolean" href="dboolean.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/shanmu.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding and Humanities and Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="course.html">
+   Courses
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="basics/basic.html">
+     Basic Python
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="syllabus.html">
+       Sample Syllabus
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="pyintro.html">
+       Python Introduction
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="identifier.html">
+         Identifiers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="lines.html">
+         Lines and Indention
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="stmnt.html">
+         Statements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="operators.html">
+         Operators
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 current active collapsible-parent">
+      <a class="reference internal" href="datatypes.html">
+       Datatypes
+      </a>
+      <ul class="current collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="numbers.html">
+         Numbers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dboolean.html">
+         Boolean
+        </a>
+       </li>
+       <li class="toctree-l4 current active">
+        <a class="current reference internal" href="#">
+         Strings
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dlists.html">
+         Lists
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dset.html">
+         Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dtuple.html">
+         Tuples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="dictionary.html">
+         Dictionaries
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="control.html">
+       Control Statements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="files.html">
+       File
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="function.html">
+       Functions
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="usr.html">
+         User Defined Function
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="lambda.html">
+         Lambda Function
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="oop.html">
+       OOPS Concept
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="classes.html">
+         Classes and Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="cons.html">
+         Constructor and Destructor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="inherit.html">
+         Inheritance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="overlap.html">
+         Overlapping
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="overload.html">
+         Overloading
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="regular.html">
+       Regular Expression
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="except.html">
+       Exception Handling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="threads.html">
+       Threads
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/dstrings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dharanpreethi/R-Mallet"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dharanpreethi/R-Mallet/issues/new?title=Issue%20on%20page%20%2Fdstrings.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dharanpreethi/R-Mallet/master?urlpath=tree/docs/dstrings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing">
+   Indexing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#inserting">
+   Inserting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#slincing">
+   Slincing
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-operations-on-strings">
+   More operations on strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#left-fill-with-zeroes">
+     left fill with zeroes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-leading-and-trailing-whitespace">
+     remove leading and trailing whitespace
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#retain-non-whitespace-in-a-list">
+     retain non-whitespace in a list
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#split-into-3-around-string-supplied">
+     split into 3 around string supplied
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#methods-may-be-chained">
+     methods may be chained.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#to-check-the-datatypes">
+     to check the datatypes
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expand-tabs">
+     Expand tabs
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fill-with-specified-character">
+     fill with specified character
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#find-the-specified-character">
+     Find the specified character
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#replace-the-word">
+     replace the word
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="strings">
+<h1>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h1>
+<li>String written in quotes and double quotes and triple quotes</li>
+<li>To concatenate use + sign</li>
+<p><img alt="" src="_images/strhello.png" /></p>
+<div class="section" id="indexing">
+<h2>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;Hello, world!&quot;</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span> 
+<span class="n">spam</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;e&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="inserting">
+<h2>Inserting<a class="headerlink" href="#inserting" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span> 
+<span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot; Py-&quot;</span> <span class="o">+</span> <span class="n">spam</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span> 
+<span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello, Py-world!&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="slincing">
+<h2>Slincing<a class="headerlink" href="#slincing" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="s2">&quot;I love Python.&quot;</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;I&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;love&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span><span class="p">[</span><span class="mi">7</span><span class="p">:</span><span class="mi">13</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Python&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="more-operations-on-strings">
+<h2>More operations on strings<a class="headerlink" href="#more-operations-on-strings" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="left-fill-with-zeroes">
+<h3>left fill with zeroes<a class="headerlink" href="#left-fill-with-zeroes" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;abc def&#39;</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;00000000000000000000000abc def&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="remove-leading-and-trailing-whitespace">
+<h3>remove leading and trailing whitespace<a class="headerlink" href="#remove-leading-and-trailing-whitespace" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; 1234 &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1234&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="retain-non-whitespace-in-a-list">
+<h3>retain non-whitespace in a list<a class="headerlink" href="#retain-non-whitespace-in-a-list" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; 1234 456 23456 &#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1234&#39;, &#39;456&#39;, &#39;23456&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="split-into-3-around-string-supplied">
+<h3>split into 3 around string supplied<a class="headerlink" href="#split-into-3-around-string-supplied" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; 1234.567e-45 &#39;</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39; 1234.567&#39;, &#39;e&#39;, &#39;-45 &#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="methods-may-be-chained">
+<h3>methods may be chained.<a class="headerlink" href="#methods-may-be-chained" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; 1234.567e-45 &#39;</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">&#39;e&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;1234.567&#39;, &#39;e&#39;, &#39;-45&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="to-check-the-datatypes">
+<h3>to check the datatypes<a class="headerlink" href="#to-check-the-datatypes" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;123456&#39;</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;01234567&#39;</span><span class="o">.</span><span class="n">isdecimal</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;abcd123efg789abc&#39;</span><span class="o">.</span><span class="n">isalnum</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="expand-tabs">
+<h3>Expand tabs<a class="headerlink" href="#expand-tabs" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">2345</span><span class="se">\t</span><span class="s1">56</span><span class="se">\t</span><span class="s1">678&#39;</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;        2345    56      678&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">2345</span><span class="se">\t</span><span class="s1">56</span><span class="se">\t</span><span class="s1">678&#39;</span><span class="o">.</span><span class="n">expandtabs</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;            2345        56          678&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="fill-with-specified-character">
+<h3>fill with specified character<a class="headerlink" href="#fill-with-specified-character" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; abcd &#39;</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;++++++++++++ abcd ++++++++++++&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="find-the-specified-character">
+<h3>Find the specified character<a class="headerlink" href="#find-the-specified-character" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; abcd efg abc &#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; abcd efg abc &#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; abcd efg abc &#39;</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">13</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="replace-the-word">
+<h3>replace the word<a class="headerlink" href="#replace-the-word" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39; The quick brown fox had a quick lunch .... &#39;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;quick&#39;</span><span class="p">,</span><span class="s1">&#39;lazy&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; The lazy brown fox had a lazy lunch .... &#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="dboolean.html" title="previous page">Boolean</a>
+    <a class='right-next' id="next-link" href="dlists.html" title="next page">Lists</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shanmugapriya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

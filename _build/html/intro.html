@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction &#8212; Coding and Humanities and Python</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Courses" href="course.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/shanmu.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding and Humanities and Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="course.html">
+   Courses
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="basics/basic.html">
+     Basic Python
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="basics/syllabus.html">
+       Sample Syllabus
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="basics/pyintro.html">
+       Python Introduction
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/identifier.html">
+         Identifiers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/lines.html">
+         Lines and Indention
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/stmnt.html">
+         Statements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/operators.html">
+         Operators
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="basics/datatypes.html">
+       Datatypes
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/numbers.html">
+         Numbers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/dboolean.html">
+         Boolean
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/dstrings.html">
+         Strings
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/dlists.html">
+         Lists
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/dset.html">
+         Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/dtuple.html">
+         Tuples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/dictionary.html">
+         Dictionaries
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="basics/control.html">
+       Control Statements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="basics/files.html">
+       File
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="basics/function.html">
+       Functions
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/usr.html">
+         User Defined Function
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/lambda.html">
+         Lambda Function
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="basics/oop.html">
+       OOPS Concept
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/classes.html">
+         Classes and Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/cons.html">
+         Constructor and Destructor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/inherit.html">
+         Inheritance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/overlap.html">
+         Overlapping
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="basics/overload.html">
+         Overloading
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="basics/regular.html">
+       Regular Expression
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="basics/except.html">
+       Exception Handling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="basics/threads.html">
+       Threads
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="web_scrapping/scrape_intro.html">
+     Web Scraping
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="web_scrapping/scrap2.html">
+       Newspaper scraping
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/intro.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dharanpreethi/R-Mallet"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dharanpreethi/R-Mallet/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#digital-humanities-and-data">
+   Digital Humanities and Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acquiring-cleaning-and-creating-data">
+   Acquiring, Cleaning, and Creating Data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python-for-digital-humanities">
+   Python For Digital Humanities
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>As primary sources of information are more frequently digitized and available online than ever before, how can we use those sources to ask new questions? How did Chinese families organize themselves and their landscapes in China’s past? How did African slaves from different cultures form communities in the Americas? What influences informed the creation and evolution of Broadway musicals? How can I understand or interpret 1,000 books all at once? How can I create a visualization that my students can interact with? The answers to these questions can be explored using a wide variety of digital tools, methods, and sources.</p>
+<p>As museums, libraries, archives and other institutions have digitized collections and artifacts, new tools and standards have been developed that turn those materials into machine-readable data. Optical Character Recognition (OCR) and the Text Encoding Initiative (TEI), for example, have enabled humanities researchers to process vast amounts of textual data. However, these advances are not limited just to text. Sound, images, and video have all been subject to these new forms of research. Whether you are a student or scholar, librarian or archivist, museum curator or public historian — or just plain curious — this course will help you bring your area of study or interest to new life using digital tools.</p>
+<div class="section" id="digital-humanities-and-data">
+<h2>Digital Humanities and Data<a class="headerlink" href="#digital-humanities-and-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Explain the term “digital humanities,” and how it is understood across humanities disciplines.</p></li>
+<li><p>Describe the research journey as a partnership between researcher and library collections and staff.</p></li>
+<li><p>List examples of the limits of classification.</p></li>
+<li><p>Describe the implicit and explicit hierarchies that are created when gathering and analyzing data.</p></li>
+<li><p>Distinguish between what counts as data and what does not.
+Identify different data formats and how they fit into a research workflow.</p></li>
+</ul>
+</div>
+<div class="section" id="acquiring-cleaning-and-creating-data">
+<h2>Acquiring, Cleaning, and Creating Data<a class="headerlink" href="#acquiring-cleaning-and-creating-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Identify the differences between unstructured, semi-structured, and structured data.</p></li>
+<li><p>Distinguish between different file types, their definitions, and applications.</p></li>
+<li><p>Apply intellectual property rights to the downloading and sharing of data.</p></li>
+<li><p>Practice different ways of downloading or creating data.</p></li>
+</ul>
+</div>
+<div class="section" id="python-for-digital-humanities">
+<h2>Python For Digital Humanities<a class="headerlink" href="#python-for-digital-humanities" title="Permalink to this headline">¶</a></h2>
+<p>It presumes no knowledge of computer programming. Python provides a perfect introductory programming language because it uses simple syntax (style of language), indentation (making it easy to read), and has many libraries (which handle higher-end coding).</p>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='right-next' id="next-link" href="course.html" title="next page">Courses</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shanmugapriya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

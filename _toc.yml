@@ -1,0 +1,43 @@
+# Table of content
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+- file: intro
+- file: course
+  sections:
+    - file: basics/basic
+      sections:
+        - file: basics/syllabus
+        - file: basics/pyintro
+          sections:
+            - file: basics/identifier
+            - file: basics/lines
+            - file: basics/stmnt
+            - file: basics/operators
+        - file: basics/datatypes
+          sections:
+            - file: basics/numbers
+            - file: basics/dboolean
+            - file: basics/dstrings
+            - file: basics/dlists
+            - file: basics/dset
+            - file: basics/dtuple
+            - file: basics/dictionary
+        - file: basics/control
+        - file: basics/files
+        - file: basics/function
+          sections:
+            - file: basics/usr
+            - file: basics/lambda
+        - file: basics/oop
+          sections:
+            - file: basics/classes
+            - file: basics/cons
+            - file: basics/inherit
+            - file: basics/overlap
+            - file: basics/overload
+        - file: basics/regular
+        - file: basics/except
+        - file: basics/threads
+    - file: web_scrapping/scrape_intro
+      sections:
+        - file: web_scrapping/scrap2

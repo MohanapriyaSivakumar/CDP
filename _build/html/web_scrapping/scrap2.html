@@ -1,0 +1,890 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Newspaper scraping &#8212; Coding and Humanities and Python</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Web Scraping" href="scrape_intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/shanmu.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding and Humanities and Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../course.html">
+   Courses
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../basics/basic.html">
+     Basic Python
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/syllabus.html">
+       Sample Syllabus
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/pyintro.html">
+       Python Introduction
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/identifier.html">
+         Identifiers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/lines.html">
+         Lines and Indention
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/stmnt.html">
+         Statements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/operators.html">
+         Operators
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/datatypes.html">
+       Datatypes
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/numbers.html">
+         Numbers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dboolean.html">
+         Boolean
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dstrings.html">
+         Strings
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dlists.html">
+         Lists
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dset.html">
+         Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dtuple.html">
+         Tuples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dictionary.html">
+         Dictionaries
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/control.html">
+       Control Statements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/files.html">
+       File
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/function.html">
+       Functions
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/usr.html">
+         User Defined Function
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/lambda.html">
+         Lambda Function
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/oop.html">
+       OOPS Concept
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/classes.html">
+         Classes and Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/cons.html">
+         Constructor and Destructor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/inherit.html">
+         Inheritance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/overlap.html">
+         Overlapping
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/overload.html">
+         Overloading
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/regular.html">
+       Regular Expression
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/except.html">
+       Exception Handling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/threads.html">
+       Threads
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="scrape_intro.html">
+     Web Scraping
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Newspaper scraping
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/web_scrapping/scrap2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dharanpreethi/R-Mallet"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dharanpreethi/R-Mallet/issues/new?title=Issue%20on%20page%20%2Fweb_scrapping/scrap2.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dharanpreethi/R-Mallet/master?urlpath=tree/docs/web_scrapping/scrap2.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#imposing-structure-on-data">
+   Imposing  structure on data
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#import-the-packages">
+   Import the packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pages-to-get">
+   pages to get
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-the-keyword-to-search">
+   get the keyword to search
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extracting-html-script">
+   Extracting html script
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#result-csv-file">
+   Result csv file
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-article-package">
+   using Article package
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-the-package">
+     installing the package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#importing-the-package">
+     importing the package
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#apply-parsing-to-know-the-properties-of-news-article-easily">
+     apply parsing to know the properties of news article easily
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#displaying-the-title-of-the-news-article">
+     displaying the title of the news article
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#displaying-the-text-of-the-news-article">
+     displaying the text of the news article
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-beautifulsoup-to-extract-entire-article">
+     using BeautifulSoup to extract entire article
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="newspaper-scraping">
+<h1>Newspaper scraping<a class="headerlink" href="#newspaper-scraping" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="imposing-structure-on-data">
+<h2>Imposing  structure on data<a class="headerlink" href="#imposing-structure-on-data" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Web scraping focuses on the transformation of unstructured data on the web</p></li>
+<li><p>Typically in html format, into structured data that can be stored</p></li>
+<li><p>And analyzed in a central local database or spreadsheat</p></li>
+</ul>
+<p><img alt="" src="../_images/web2.jpg" /></p>
+<p>here we consider the UK BBC News website i.e https://www.bbc.co.uk/search?q=covid+19&amp;page=1 and searched about covid 19 in a search box present on the top of the page shown in the picture.</p>
+<p><img alt="" src="../_images/web3.png" /></p>
+<p>Let we write the script to scrape the news by giving keywords in our python</p>
+</div>
+<div class="section" id="import-the-packages">
+<h2>Import the packages<a class="headerlink" href="#import-the-packages" title="Permalink to this headline">¶</a></h2>
+<p>here the the BBC news website had written using html scripts to extract the html scripts we have to install the BeautifulSoup and requests packages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span><span class="nn">sys</span><span class="o">,</span><span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="n">fdaa7df37e5</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pages-to-get">
+<h2>pages to get<a class="headerlink" href="#pages-to-get" title="Permalink to this headline">¶</a></h2>
+<p>After searching of keywords the results shown in the number of pages</p>
+<p><img alt="" src="../_images/web4.png" /></p>
+<p>so we have to intialize the variable to request the particular page and the result of the searching will be stored in the dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pagesToGet</span><span class="o">=</span> <span class="mi">1</span>
+<span class="n">resultframe</span><span class="o">=</span><span class="p">[]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-the-keyword-to-search">
+<h2>get the keyword to search<a class="headerlink" href="#get-the-keyword-to-search" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">key</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter the query: &quot;</span><span class="p">)</span>
+<span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;+&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter the query: covid 19
+covid+19
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="extracting-html-script">
+<h2>Extracting html script<a class="headerlink" href="#extracting-html-script" title="Permalink to this headline">¶</a></h2>
+<p>write the code to extract html script using class names mentioned in the bbc news website.</p>
+<p><img alt="" src="../_images/web5.png" /></p>
+<p>and the result stored in the csv file named <b>”search_res.csv” </b></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">pagesToGet</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;processing page :&#39;</span><span class="p">,</span> <span class="n">page</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://www.bbc.co.uk/search?q=&#39;</span><span class="o">+</span><span class="n">key</span><span class="o">+</span><span class="s1">&#39;+article&amp;page=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">page</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>            
+    <span class="n">soup</span><span class="o">=</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="n">frame</span><span class="o">=</span><span class="p">[]</span>
+    <span class="n">links</span><span class="o">=</span><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-1lb37cz-Stack e1y4nx260&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)</span>
+    <span class="c1">#links=soup.find_all(&#39;li&#39;,attrs={&#39;class&#39;:&#39;o-listicle__item&#39;})</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">))</span>
+    <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;search_res.csv&quot;</span>
+    <span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+    <span class="n">headers</span><span class="o">=</span><span class="s2">&quot;Statement,Link,Date</span><span class="se">\n</span><span class="s2">&quot;</span>
+    <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+    
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+      
+        <span class="n">Statement</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;div&quot;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-l100ew-PromoContentSummary e1f5wbog1&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-1uw1j0b-PromoHeadline e1f5wbog2&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-vh7bxp-PromoLink e1f5wbog6&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+       
+        <span class="n">Link</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-1uw1j0b-PromoHeadline e1f5wbog2&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">Date</span> <span class="o">=</span> <span class="n">j</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-1hizfh0-MetadataSnippet ecn1o5v0&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="p">[</span><span class="mi">8</span><span class="p">:]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+       
+        <span class="n">frame</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">Statement</span><span class="p">,</span><span class="n">Link</span><span class="p">,</span><span class="n">Date</span><span class="p">))</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">Statement</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;^&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="n">Link</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="n">Date</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;^&quot;</span><span class="p">)</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">resultframe</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>processing page : 1
+https://www.bbc.co.uk/search?q=covid+19+article&amp;page=1
+10
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="result-csv-file">
+<h2>Result csv file<a class="headerlink" href="#result-csv-file" title="Permalink to this headline">¶</a></h2>
+<p>here in a page there are 10 links are displayed. The title of the news related to keyword and published url and published date are stored in the csv file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resultframe</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Statement&#39;</span><span class="p">,</span><span class="s1">&#39;Link&#39;</span><span class="p">,</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           Statement  \
+0  BBC Inside Science: Coronavirus conspiracy, Li...   
+1  Covid: Biden vows 100m vaccinations for US in ...   
+2  Coronavirus: Third West Yorkshire bed factory ...   
+3  US election 2020: Biden takes Georgia to solid...   
+4           Coronavirus in Sudan exposes new leaders   
+5  BCG: Can a vaccine from 1921 save lives from C...   
+6  Shoprite: Africa&#39;s biggest supermarket conside...   
+7  Coronavirus in Africa: &#39;Signs of hope&#39; as case...   
+8  Coronavirus: Calls to protect &#39;vital&#39; warehous...   
+9  Letter from Africa: Spare a thought for strand...   
+
+                                                Link         Date  
+0          https://www.bbc.co.uk/programmes/m000k325  18 Jun 2020  
+1  https://www.bbc.co.uk/news/world-us-canada-552...   9 Dec 2020  
+2  https://www.bbc.co.uk/news/uk-england-leeds-53...  13 Jul 2020  
+3  https://www.bbc.co.uk/news/election-us-2020-54...  14 Nov 2020  
+4   https://www.bbc.co.uk/news/world-africa-52735520  25 May 2020  
+5         https://www.bbc.co.uk/news/health-54465733  11 Oct 2020  
+6   https://www.bbc.co.uk/news/world-africa-53637506   3 Aug 2020  
+7   https://www.bbc.co.uk/news/world-africa-53847699  20 Aug 2020  
+8  https://www.bbc.co.uk/news/uk-england-south-yo...   2 Apr 2020  
+9   https://www.bbc.co.uk/news/world-africa-52645702  17 May 2020  
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-article-package">
+<h2>using Article package<a class="headerlink" href="#using-article-package" title="Permalink to this headline">¶</a></h2>
+<p>using the article package, we can display the various properties of news article like title of the news, summary of the news, meta description etc., we can take the link of the above result i.e data DataFrame.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Link&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0            https://www.bbc.co.uk/programmes/m000k325
+1    https://www.bbc.co.uk/news/world-us-canada-552...
+2    https://www.bbc.co.uk/news/uk-england-leeds-53...
+3    https://www.bbc.co.uk/news/election-us-2020-54...
+4     https://www.bbc.co.uk/news/world-africa-52735520
+5           https://www.bbc.co.uk/news/health-54465733
+6     https://www.bbc.co.uk/news/world-africa-53637506
+7     https://www.bbc.co.uk/news/world-africa-53847699
+8    https://www.bbc.co.uk/news/uk-england-south-yo...
+9     https://www.bbc.co.uk/news/world-africa-52645702
+Name: Link, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-the-package">
+<h3>installing the package<a class="headerlink" href="#installing-the-package" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install newspaper3k
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting newspaper3k
+  Using cached newspaper3k-0.2.8-py3-none-any.whl (211 kB)
+Requirement already satisfied: cssselect&gt;=0.9.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (1.1.0)
+Collecting tldextract&gt;=2.0.1
+  Using cached tldextract-3.1.0-py2.py3-none-any.whl (87 kB)
+Requirement already satisfied: python-dateutil&gt;=2.5.3 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (2.8.1)
+Collecting jieba3k&gt;=0.35.1
+  Using cached jieba3k-0.35.1.zip (7.4 MB)
+Collecting tinysegmenter==0.3
+  Using cached tinysegmenter-0.3.tar.gz (16 kB)
+Collecting feedparser&gt;=5.2.1
+  Using cached feedparser-6.0.2-py3-none-any.whl (80 kB)
+Requirement already satisfied: nltk&gt;=3.2.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (3.5)
+Requirement already satisfied: requests&gt;=2.10.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (2.24.0)
+Requirement already satisfied: Pillow&gt;=3.3.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (7.2.0)
+Requirement already satisfied: beautifulsoup4&gt;=4.4.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (4.9.1)
+Requirement already satisfied: lxml&gt;=3.6.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (4.5.2)
+Collecting feedfinder2&gt;=0.0.4
+  Using cached feedfinder2-0.0.4.tar.gz (3.3 kB)
+Requirement already satisfied: PyYAML&gt;=3.11 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (5.3.1)
+Requirement already satisfied: idna in c:\users\mohanapriya\anaconda3\lib\site-packages (from tldextract&gt;=2.0.1-&gt;newspaper3k) (2.10)
+Requirement already satisfied: filelock&gt;=3.0.8 in c:\users\mohanapriya\anaconda3\lib\site-packages (from tldextract&gt;=2.0.1-&gt;newspaper3k) (3.0.12)
+Collecting requests-file&gt;=1.4
+  Using cached requests_file-1.5.1-py2.py3-none-any.whl (3.7 kB)
+Requirement already satisfied: six&gt;=1.5 in c:\users\mohanapriya\anaconda3\lib\site-packages (from python-dateutil&gt;=2.5.3-&gt;newspaper3k) (1.15.0)
+Collecting sgmllib3k
+  Using cached sgmllib3k-1.0.0.tar.gz (5.8 kB)
+Requirement already satisfied: regex in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (2020.6.8)
+Requirement already satisfied: click in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (7.1.2)
+Requirement already satisfied: tqdm in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (4.47.0)
+Requirement already satisfied: joblib in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (0.16.0)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (1.25.9)
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (2020.6.20)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (3.0.4)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from beautifulsoup4&gt;=4.4.1-&gt;newspaper3k) (2.0.1)
+Building wheels for collected packages: jieba3k, tinysegmenter, feedfinder2, sgmllib3k
+  Building wheel for jieba3k (setup.py): started
+  Building wheel for jieba3k (setup.py): finished with status &#39;done&#39;
+  Created wheel for jieba3k: filename=jieba3k-0.35.1-py3-none-any.whl size=7398410 sha256=711e29fc8afc715e0631851856f61038e6efdc8b2794938c73af5c0978d7c99e
+  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\1f\7e\0c\54f3b0f5164278677899f2db08f2b07943ce2d024a3c862afb
+  Building wheel for tinysegmenter (setup.py): started
+  Building wheel for tinysegmenter (setup.py): finished with status &#39;done&#39;
+  Created wheel for tinysegmenter: filename=tinysegmenter-0.3-py3-none-any.whl size=13542 sha256=791b1338eb28143a5445431beaf0f6019f4983196034b956178a7a6d70a03a5d
+  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\99\74\83\8fac1c8d9c648cfabebbbffe97a889f6624817f3aa0bbe6c09
+  Building wheel for feedfinder2 (setup.py): started
+  Building wheel for feedfinder2 (setup.py): finished with status &#39;done&#39;
+  Created wheel for feedfinder2: filename=feedfinder2-0.0.4-py3-none-any.whl size=3359 sha256=e2bb1d8c413f997bdec226e74b0c496b607f314331c5ca38636d42de4322ed36
+  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\b6\09\68\a9f15498ac02c23dde29f18745bc6a6f574ba4ab41861a3575
+  Building wheel for sgmllib3k (setup.py): started
+  Building wheel for sgmllib3k (setup.py): finished with status &#39;done&#39;
+  Created wheel for sgmllib3k: filename=sgmllib3k-1.0.0-py3-none-any.whl size=6071 sha256=96e616f95afb00829d458448de5bea3354e750eaea36a13afee97a0227eb9eb5
+  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\83\63\2f\117884c3b19d46b64d3d61690333aa80c88dc14050e269c546
+Successfully built jieba3k tinysegmenter feedfinder2 sgmllib3k
+Installing collected packages: requests-file, tldextract, jieba3k, tinysegmenter, sgmllib3k, feedparser, feedfinder2, newspaper3k
+Successfully installed feedfinder2-0.0.4 feedparser-6.0.2 jieba3k-0.35.1 newspaper3k-0.2.8 requests-file-1.5.1 sgmllib3k-1.0.0 tinysegmenter-0.3 tldextract-3.1.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="importing-the-package">
+<h3>importing the package<a class="headerlink" href="#importing-the-package" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">newspaper</span> <span class="kn">import</span> <span class="n">Article</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Link&#39;</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#for example take a first result link</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="apply-parsing-to-know-the-properties-of-news-article-easily">
+<h3>apply parsing to know the properties of news article easily<a class="headerlink" href="#apply-parsing-to-know-the-properties-of-news-article-easily" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res_article</span> <span class="o">=</span> <span class="n">Article</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="c1"># en for English </span>
+<span class="n">res_article</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>  <span class="c1">#download an article</span>
+<span class="n">res_article</span><span class="o">.</span><span class="n">parse</span><span class="p">()</span> <span class="c1">#To parse the article </span>
+<span class="n">res_article</span><span class="o">.</span><span class="n">nlp</span><span class="p">()</span> <span class="c1">#To perform natural language processing ie..nlp </span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-the-title-of-the-news-article">
+<h3>displaying the title of the news article<a class="headerlink" href="#displaying-the-title-of-the-news-article" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res_article</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Covid: Biden vows 100m vaccinations for US in first 100 days&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="displaying-the-text-of-the-news-article">
+<h3>displaying the text of the news article<a class="headerlink" href="#displaying-the-text-of-the-news-article" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res_article</span><span class="o">.</span><span class="n">text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;&quot;My first 100 days won\&#39;t end the Covid-19 virus. I can\&#39;t promise that. But we did not get into this mess quickly. We\&#39;re not going to get out of it quickly,&quot; he said at the event in Delaware, giving few details of how the largest vaccination programme in US history would be carried out.&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="using-beautifulsoup-to-extract-entire-article">
+<h3>using BeautifulSoup to extract entire article<a class="headerlink" href="#using-beautifulsoup-to-extract-entire-article" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Link&#39;</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">url</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://www.bbc.co.uk/news/uk-england-leeds-53394717&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="" src="../_images/web6.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+     
+<span class="n">soup</span><span class="o">=</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">links</span><span class="o">=</span><span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-5h7eao-ArticleWrapper e1nh2i2l0&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-uf6wea-RichTextComponentWrapper e1xue1i83&#39;</span><span class="p">})</span>
+<span class="c1">#links=soup.find_all(&#39;li&#39;,attrs={&#39;class&#39;:&#39;o-listicle__item&#39;})</span>
+<span class="c1">#print(&quot;l:&quot;+links)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="n">news</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;css-83cqas-RichTextContainer e5tfeyi2&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">news</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>A bed factory has seen eight workers test positive for coronavirus - the third in a series of outbreaks at similar sites in West Yorkshire.
+Highgrove Beds in Liversedge ceased production as a safety precaution with all staff being offered tests.
+The outbreak follows cases at Deep Sleep Beds in Ossett and Dura Beds in Batley over the past month.
+There have also been cases of coronavirus reported at two meat factories in West Yorkshire.
+Rachel Spencer-Henshall, director of public health at Kirklees Council, warned factory workers of the risk of car sharing.
+She said: &quot;With the bed factories, it&#39;s less about the industry itself and more about working in a factory setting.
+&quot;What interests me a lot more is how people get to and from work, because actually you find a lot of people are car-sharing and in those scenarios you&#39;re in quite close contact with others for quite a long period of time, dependent on the commute.&quot;
+Latest news and stories from YorkshireDeep Sleep Beds in Ossett sees four casesDura Beds in Batley: Eight staff contract Covid-19
+Kirklees Council have been working with Highgrove Beds for about five days with an increase in cases seen over the weekend.
+The factory has been was inspected by Kirklees Council and &quot;presented high standards of infection control procedures and practices&quot;.
+In a joint statement, the company, the council and Public Health England said the risk to local residents from the outbreak was very low.
+A SIMPLE GUIDE:  How do I protect myself?IMPACT: What the virus does to the bodyRECOVERY: How long does it take?LOCKDOWN: How can we lift restrictions?ENDGAME: How do we get out of this mess?
+Earlier this month, four workers at Deep Sleep Beds tested positive for Covid-19.
+On 1 July, it was revealed that eight staff at Dura Beds had contracted the virus.
+This comes as Forza Foods in Normanton reported 17 positive cases. 
+Last month it was confirmed that 165 staff working at the Kober factory in Cleckheaton had tested positive for the virus.
+Why are there outbreaks in meat processing plants?Forza Foods open despite coronavirus cases&#39;Secrecy&#39; claims over Cleckheaton outbreak
+Ms Spencer-Henshall said that certain industries have seen increases in cases including meat processing. 
+She added: &quot;Those factory conditions can be really attractive to the virus, particularly being a cold environment and quite loud so people are having to communicate and shout. 
+&quot;We all know that singing is frowned upon at the moment and it&#39;s a similar thing in terms of projecting the virus.&quot;
+Follow BBC Yorkshire on Facebook, Twitter and Instagram. Send your story ideas to yorkslincs.news@bbc.co.uk or send video here.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./web_scrapping"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="scrape_intro.html" title="previous page">Web Scraping</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shanmugapriya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

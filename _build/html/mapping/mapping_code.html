@@ -1,0 +1,945 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mapping using Python &#8212; Coding and Humanities and Python</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Mapping" href="intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/shanmu.jpeg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Coding and Humanities and Python</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../course.html">
+   Courses
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../basics/basic.html">
+     Basic Python
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/syllabus.html">
+       Sample Syllabus
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/pyintro.html">
+       Python Introduction
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/identifier.html">
+         Identifiers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/lines.html">
+         Lines and Indention
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/stmnt.html">
+         Statements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/operators.html">
+         Operators
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/datatypes.html">
+       Datatypes
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/numbers.html">
+         Numbers
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dboolean.html">
+         Boolean
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dstrings.html">
+         Strings
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dlists.html">
+         Lists
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dset.html">
+         Sets
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dtuple.html">
+         Tuples
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/dictionary.html">
+         Dictionaries
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/control.html">
+       Control Statements
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/files.html">
+       File
+      </a>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/function.html">
+       Functions
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/usr.html">
+         User Defined Function
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/lambda.html">
+         Lambda Function
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3 collapsible-parent">
+      <a class="reference internal" href="../basics/oop.html">
+       OOPS Concept
+      </a>
+      <ul class="collapse-ul">
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/classes.html">
+         Classes and Objects
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/cons.html">
+         Constructor and Destructor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/inherit.html">
+         Inheritance
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/overlap.html">
+         Overlapping
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="../basics/overload.html">
+         Overloading
+        </a>
+       </li>
+      </ul>
+      <i class="fas fa-chevron-down">
+      </i>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/regular.html">
+       Regular Expression
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/except.html">
+       Exception Handling
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../basics/threads.html">
+       Threads
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../web_scrapping/scrape_intro.html">
+     Web Scraping
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../web_scrapping/scrap2.html">
+       Newspaper scraping
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="intro.html">
+     Mapping
+    </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Mapping using Python
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/mapping/mapping_code.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dharanpreethi/R-Mallet"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dharanpreethi/R-Mallet/issues/new?title=Issue%20on%20page%20%2Fmapping/mapping_code.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dharanpreethi/R-Mallet/master?urlpath=tree/docs/mapping/mapping_code.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#installation-of-geotext-modules">
+   Installation of geotext modules
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-to-use-geotext-module">
+     Example to use GeoText module
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-to-exract-place-names-from-a-website">
+   Example to Exract place names from a website
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#result-of-the-above-code">
+     Result of the above Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installing-arcgis-to-map-the-places">
+     Installing arcgis to map the places
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#code-to-find-latitude-and-longitude">
+   Code to find latitude and longitude
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#result-map-of-the-above-code">
+     Result Map of the above code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-to-find-the-address-of-the-given-latitude-and-longitude">
+   Example to Find the address of the Given latitude and longitude
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-a-map-for-above-address">
+     Draw a map for above address
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#map-can-be-save-as-html-file">
+   map can be save as html file
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="mapping-using-python">
+<h1>Mapping using Python<a class="headerlink" href="#mapping-using-python" title="Permalink to this headline">¶</a></h1>
+<p>Here we use geotext library to extract places names from the sentence.</p>
+<div class="section" id="installation-of-geotext-modules">
+<h2>Installation of geotext modules<a class="headerlink" href="#installation-of-geotext-modules" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install geotext
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: geotext in c:\users\mohanapriya\anaconda3\envs\jbook\lib\site-packages (0.4.0)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="example-to-use-geotext-module">
+<h3>Example to use GeoText module<a class="headerlink" href="#example-to-use-geotext-module" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">geotext</span> <span class="kn">import</span> <span class="n">GeoText</span>
+
+<span class="n">places</span> <span class="o">=</span> <span class="n">GeoText</span><span class="p">(</span><span class="s2">&quot;I was in Chennai on that day and next day i went to Erode&quot;</span><span class="p">)</span>
+<span class="n">places</span><span class="o">.</span><span class="n">cities</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Chennai&#39;, &#39;Erode&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-to-exract-place-names-from-a-website">
+<h2>Example to Exract place names from a website<a class="headerlink" href="#example-to-exract-place-names-from-a-website" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>here we going to extract place names from the caption of the picture on the site , “https://www.gutenberg.org/files/64316/64316-h/64316-h.htm”</p></li>
+<li><p>also we used the method of previous web scraping method using BeautifulSoup module</p></li>
+</ul>
+<p><img alt="" src="../_images/map2.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span><span class="nn">sys</span><span class="o">,</span><span class="nn">time</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">geotext</span> <span class="kn">import</span> <span class="n">GeoText</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">897</span><span class="n">b828d8aec</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">requests</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span> <span class="nn">geotext</span> <span class="kn">import</span> <span class="n">GeoText</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://www.gutenberg.org/files/64316/64316-h/64316-h.htm&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">page</span><span class="o">=</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+     
+<span class="n">soup</span><span class="o">=</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="o">.</span><span class="n">text</span><span class="p">,</span><span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">resultframe</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">links</span><span class="o">=</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;ills&#39;</span><span class="p">})</span>
+<span class="c1">#links=soup.find_all(&#39;li&#39;,attrs={&#39;class&#39;:&#39;o-listicle__item&#39;})</span>
+<span class="c1">#print(links)</span>
+<span class="n">filename</span><span class="o">=</span><span class="s2">&quot;caption.csv&quot;</span>
+<span class="n">f</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+<span class="n">headers</span><span class="o">=</span><span class="s2">&quot;Link,Caption</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">headers</span><span class="p">)</span>
+<span class="n">u</span><span class="o">=</span><span class="s1">&#39;https://www.gutenberg.org/files/64316/64316-h/&#39;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="n">k</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;figcenter&#39;</span><span class="p">})</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+        <span class="n">l</span><span class="o">=</span><span class="n">j</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+        <span class="n">Link</span> <span class="o">=</span> <span class="n">u</span><span class="o">+</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;img&#39;</span><span class="p">)[</span><span class="s1">&#39;src&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>          <span class="c1">#Extract Link of all the images</span>
+        <span class="n">cap</span><span class="o">=</span><span class="n">j</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">,</span><span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span><span class="s1">&#39;caption&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>  <span class="c1">#Extract caption of all the images</span>
+        
+        
+        <span class="n">a</span><span class="o">=</span><span class="n">cap</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">GeoText</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="s1">&#39;US&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">cities</span>
+        
+        <span class="k">if</span><span class="p">(</span><span class="n">result</span><span class="o">!=</span><span class="p">[]):</span>
+            <span class="n">frame</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">Link</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>  
+            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">Link</span><span class="o">+</span><span class="s2">&quot;,&quot;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">+</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1">#stored only the link and caption that contains city names</span>
+    <span class="n">resultframe</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">frame</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+        
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="result-of-the-above-code">
+<h3>Result of the above Code<a class="headerlink" href="#result-of-the-above-code" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">resultframe</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Link&#39;</span><span class="p">,</span><span class="s1">&#39;Caption&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                Link      Caption
+0  https://www.gutenberg.org/files/64316/64316-h/...  Westminster
+1  https://www.gutenberg.org/files/64316/64316-h/...   Birmingham
+2  https://www.gutenberg.org/files/64316/64316-h/...         Kent
+3  https://www.gutenberg.org/files/64316/64316-h/...    Rotterdam
+4  https://www.gutenberg.org/files/64316/64316-h/...  Westminster
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-arcgis-to-map-the-places">
+<h3>Installing arcgis to map the places<a class="headerlink" href="#installing-arcgis-to-map-the-places" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install arcgis
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting arcgis
+  Downloading arcgis-1.8.3.post2.tar.gz (2.6 MB)
+Requirement already satisfied: six in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (1.15.0)
+Requirement already satisfied: ipywidgets&gt;=7 in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (7.5.1)
+Requirement already satisfied: widgetsnbextension&gt;=3 in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (3.5.1)
+Requirement already satisfied: pandas&gt;=1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (1.0.5)
+Requirement already satisfied: numpy&gt;=1.16.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (1.18.5)
+Requirement already satisfied: matplotlib in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (3.2.2)
+Requirement already satisfied: keyring&gt;=19 in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (21.2.1)
+Processing c:\users\mohanapriya\appdata\local\pip\cache\wheels\4d\11\58\7d0a04db6c902ef42b717da2981807529f4922485141ab404f\lerc-0.1.0-py3-none-any.whl
+Collecting ujson&gt;=3
+  Using cached ujson-4.0.1-cp38-cp38-win_amd64.whl (44 kB)
+Requirement already satisfied: jupyterlab in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (2.1.5)
+Collecting python-certifi-win32
+  Using cached python_certifi_win32-1.6-py2.py3-none-any.whl (7.2 kB)
+Processing c:\users\mohanapriya\appdata\local\pip\cache\wheels\1f\1b\b5\54affbefc8a7e2bdf1da000fc576b8a1c91338f1f327a04f4c\pyshp-2.1.3-py3-none-any.whl
+Requirement already satisfied: requests in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (2.24.0)
+Collecting requests-oauthlib
+  Using cached requests_oauthlib-1.3.0-py2.py3-none-any.whl (23 kB)
+Collecting requests_toolbelt
+  Using cached requests_toolbelt-0.9.1-py2.py3-none-any.whl (54 kB)
+Collecting requests_ntlm
+  Using cached requests_ntlm-1.1.0-py2.py3-none-any.whl (5.7 kB)
+Requirement already satisfied: pywin32&gt;=223 in c:\users\mohanapriya\anaconda3\lib\site-packages (from arcgis) (227)
+Collecting requests-negotiate-sspi
+  Using cached requests_negotiate_sspi-0.5.2-py2.py3-none-any.whl (7.1 kB)
+Collecting requests-kerberos
+  Using cached requests_kerberos-0.12.0-py2.py3-none-any.whl (14 kB)
+Collecting winkerberos
+  Using cached winkerberos-0.7.0-cp38-cp38-win_amd64.whl (23 kB)
+Requirement already satisfied: traitlets&gt;=4.3.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipywidgets&gt;=7-&gt;arcgis) (4.3.3)
+Requirement already satisfied: ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot; in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipywidgets&gt;=7-&gt;arcgis) (7.16.1)
+Requirement already satisfied: ipykernel&gt;=4.5.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipywidgets&gt;=7-&gt;arcgis) (5.3.2)
+Requirement already satisfied: nbformat&gt;=4.2.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipywidgets&gt;=7-&gt;arcgis) (5.0.7)
+Requirement already satisfied: notebook&gt;=4.4.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from widgetsnbextension&gt;=3-&gt;arcgis) (6.0.3)
+Requirement already satisfied: pytz&gt;=2017.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from pandas&gt;=1-&gt;arcgis) (2020.1)
+Requirement already satisfied: python-dateutil&gt;=2.6.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from pandas&gt;=1-&gt;arcgis) (2.8.1)
+Requirement already satisfied: kiwisolver&gt;=1.0.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from matplotlib-&gt;arcgis) (1.2.0)
+Requirement already satisfied: cycler&gt;=0.10 in c:\users\mohanapriya\anaconda3\lib\site-packages (from matplotlib-&gt;arcgis) (0.10.0)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,&gt;=2.0.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from matplotlib-&gt;arcgis) (2.4.7)
+Requirement already satisfied: pywin32-ctypes!=0.1.0,!=0.1.1; sys_platform == &quot;win32&quot; in c:\users\mohanapriya\anaconda3\lib\site-packages (from keyring&gt;=19-&gt;arcgis) (0.2.0)
+Requirement already satisfied: tornado!=6.0.0,!=6.0.1,!=6.0.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jupyterlab-&gt;arcgis) (6.0.4)
+Requirement already satisfied: jupyterlab_server&lt;2.0,&gt;=1.1.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jupyterlab-&gt;arcgis) (1.2.0)
+Requirement already satisfied: jinja2&gt;=2.10 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jupyterlab-&gt;arcgis) (2.11.2)
+Requirement already satisfied: wrapt&gt;=1.10.4 in c:\users\mohanapriya\anaconda3\lib\site-packages (from python-certifi-win32-&gt;arcgis) (1.11.2)
+Requirement already satisfied: certifi in c:\users\mohanapriya\anaconda3\lib\site-packages (from python-certifi-win32-&gt;arcgis) (2020.6.20)
+Collecting setuptools-scm
+  Using cached setuptools_scm-5.0.1-py2.py3-none-any.whl (28 kB)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests-&gt;arcgis) (2.10)
+Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests-&gt;arcgis) (3.0.4)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests-&gt;arcgis) (1.25.9)
+Collecting oauthlib&gt;=3.0.0
+  Using cached oauthlib-3.1.0-py2.py3-none-any.whl (147 kB)
+Collecting ntlm-auth&gt;=1.0.2
+  Using cached ntlm_auth-1.5.0-py2.py3-none-any.whl (29 kB)
+Requirement already satisfied: cryptography&gt;=1.3 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests_ntlm-&gt;arcgis) (2.9.2)
+Collecting pypiwin32&gt;=223
+  Using cached pypiwin32-223-py3-none-any.whl (1.7 kB)
+Requirement already satisfied: ipython-genutils in c:\users\mohanapriya\anaconda3\lib\site-packages (from traitlets&gt;=4.3.1-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.2.0)
+Requirement already satisfied: decorator in c:\users\mohanapriya\anaconda3\lib\site-packages (from traitlets&gt;=4.3.1-&gt;ipywidgets&gt;=7-&gt;arcgis) (4.4.2)
+Requirement already satisfied: prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (3.0.5)
+Requirement already satisfied: pickleshare in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.7.5)
+Requirement already satisfied: backcall in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.2.0)
+Requirement already satisfied: colorama; sys_platform == &quot;win32&quot; in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.4.3)
+Requirement already satisfied: jedi&gt;=0.10 in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.17.1)
+Requirement already satisfied: setuptools&gt;=18.5 in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (49.2.0.post20200714)
+Requirement already satisfied: pygments in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (2.6.1)
+Requirement already satisfied: jupyter-client in c:\users\mohanapriya\anaconda3\lib\site-packages (from ipykernel&gt;=4.5.1-&gt;ipywidgets&gt;=7-&gt;arcgis) (6.1.6)
+Requirement already satisfied: jupyter-core in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7-&gt;arcgis) (4.6.3)
+Requirement already satisfied: jsonschema!=2.5.0,&gt;=2.4 in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7-&gt;arcgis) (3.2.0)
+Requirement already satisfied: nbconvert in c:\users\mohanapriya\anaconda3\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (5.6.1)
+Requirement already satisfied: prometheus-client in c:\users\mohanapriya\anaconda3\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.8.0)
+Requirement already satisfied: terminado&gt;=0.8.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.8.3)
+Requirement already satisfied: pyzmq&gt;=17 in c:\users\mohanapriya\anaconda3\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (19.0.1)
+Requirement already satisfied: Send2Trash in c:\users\mohanapriya\anaconda3\lib\site-packages (from notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (1.5.0)
+Requirement already satisfied: json5 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jupyterlab_server&lt;2.0,&gt;=1.1.0-&gt;jupyterlab-&gt;arcgis) (0.9.5)
+Requirement already satisfied: MarkupSafe&gt;=0.23 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jinja2&gt;=2.10-&gt;jupyterlab-&gt;arcgis) (1.1.1)
+Requirement already satisfied: cffi!=1.11.3,&gt;=1.8 in c:\users\mohanapriya\anaconda3\lib\site-packages (from cryptography&gt;=1.3-&gt;requests_ntlm-&gt;arcgis) (1.14.0)
+Requirement already satisfied: wcwidth in c:\users\mohanapriya\anaconda3\lib\site-packages (from prompt-toolkit!=3.0.0,!=3.0.1,&lt;3.1.0,&gt;=2.0.0-&gt;ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.2.5)
+Requirement already satisfied: parso&lt;0.8.0,&gt;=0.7.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jedi&gt;=0.10-&gt;ipython&gt;=4.0.0; python_version &gt;= &quot;3.3&quot;-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.7.0)
+Requirement already satisfied: attrs&gt;=17.4.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7-&gt;arcgis) (19.3.0)
+Requirement already satisfied: pyrsistent&gt;=0.14.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from jsonschema!=2.5.0,&gt;=2.4-&gt;nbformat&gt;=4.2.0-&gt;ipywidgets&gt;=7-&gt;arcgis) (0.16.0)
+Requirement already satisfied: defusedxml in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.6.0)
+Requirement already satisfied: pandocfilters&gt;=1.4.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (1.4.2)
+Requirement already satisfied: entrypoints&gt;=0.2.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.3)
+Requirement already satisfied: testpath in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.4.4)
+Requirement already satisfied: mistune&lt;2,&gt;=0.8.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.8.4)
+Requirement already satisfied: bleach in c:\users\mohanapriya\anaconda3\lib\site-packages (from nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (3.1.5)
+Requirement already satisfied: pycparser in c:\users\mohanapriya\anaconda3\lib\site-packages (from cffi!=1.11.3,&gt;=1.8-&gt;cryptography&gt;=1.3-&gt;requests_ntlm-&gt;arcgis) (2.20)
+Requirement already satisfied: packaging in c:\users\mohanapriya\anaconda3\lib\site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (20.4)
+Requirement already satisfied: webencodings in c:\users\mohanapriya\anaconda3\lib\site-packages (from bleach-&gt;nbconvert-&gt;notebook&gt;=4.4.1-&gt;widgetsnbextension&gt;=3-&gt;arcgis) (0.5.1)
+Building wheels for collected packages: arcgis
+  Building wheel for arcgis (setup.py): started
+  Building wheel for arcgis (setup.py): finished with status &#39;done&#39;
+  Created wheel for arcgis: filename=arcgis-1.8.3.post2-py2.py3-none-any.whl size=3187180 sha256=b088ea086b19c596df1b6330c31c84511782f3c325bdb090d72f59455be4a978
+  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\05\58\c2\0c313e9066ce8780c462b195d4c2408fa487c6c106a34b4508
+Successfully built arcgis
+Installing collected packages: lerc, ujson, setuptools-scm, python-certifi-win32, pyshp, oauthlib, requests-oauthlib, requests-toolbelt, ntlm-auth, requests-ntlm, pypiwin32, requests-negotiate-sspi, winkerberos, requests-kerberos, arcgis
+  Attempting uninstall: ujson
+    Found existing installation: ujson 1.35
+    Uninstalling ujson-1.35:
+      Successfully uninstalled ujson-1.35
+Successfully installed arcgis-1.8.3.post2 lerc-0.1.0 ntlm-auth-1.5.0 oauthlib-3.1.0 pypiwin32-223 pyshp-2.1.3 python-certifi-win32-1.6 requests-kerberos-0.12.0 requests-negotiate-sspi-0.5.2 requests-ntlm-1.1.0 requests-oauthlib-1.3.0 requests-toolbelt-0.9.1 setuptools-scm-5.0.1 ujson-4.0.1 winkerberos-0.7.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="code-to-find-latitude-and-longitude">
+<h2>Code to find latitude and longitude<a class="headerlink" href="#code-to-find-latitude-and-longitude" title="Permalink to this headline">¶</a></h2>
+<p>here we find the latitude and longitude of the places that extract in the caption of the images. and we mark the point on the map using simple loop condition.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.gis</span> <span class="kn">import</span> <span class="n">GIS</span>
+<span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+<span class="kn">from</span> <span class="nn">arcgis.geocoding</span> <span class="kn">import</span> <span class="n">geocode</span><span class="p">,</span> <span class="n">reverse_geocode</span>
+
+<span class="n">my_gis</span> <span class="o">=</span> <span class="n">GIS</span><span class="p">()</span>
+<span class="c1"># m = my_gis.map()</span>
+
+<span class="n">m</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">,</span> <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+
+<span class="c1"># function to find the latitude and longitude</span>
+<span class="k">def</span> <span class="nf">place_names</span><span class="p">(</span><span class="n">get_places</span><span class="p">):</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">get_places</span>
+    <span class="n">geocoded</span><span class="o">=</span><span class="n">geocode</span><span class="p">(</span><span class="n">i</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;location&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">geocoded</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;Caption&#39;</span><span class="p">]:</span>
+
+    <span class="n">geocoded</span><span class="o">=</span><span class="n">place_names</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">lat</span><span class="o">=</span><span class="n">geocoded</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">]</span>
+    <span class="n">longi</span><span class="o">=</span><span class="n">geocoded</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lat</span><span class="p">,</span><span class="n">longi</span><span class="p">)</span>
+    
+    <span class="n">location</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="n">lat</span><span class="p">,</span>                 <span class="c1"># `Y` is latitude</span>
+     <span class="s1">&#39;X&#39;</span><span class="p">:</span>  <span class="n">longi</span><span class="p">,</span>               <span class="c1"># `X` is longitude</span>
+     <span class="s1">&#39;spatialReference&#39;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">&#39;wkid&#39;</span><span class="p">:</span><span class="mi">4326</span>
+     <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">unknown_pt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+    <span class="n">address</span> <span class="o">=</span> <span class="n">reverse_geocode</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">unknown_pt</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>  <span class="c1">#matching address found from the latitude and longitude</span>
+   
+    <span class="n">m</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+  
+   
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>39.86347000000006 -105.05000999999999
+{&#39;address&#39;: {&#39;Match_addr&#39;: &#39;4890-4998 W 92nd Ave, Westminster, Colorado, 80031&#39;, &#39;LongLabel&#39;: &#39;4890-4998 W 92nd Ave, Westminster, CO, 80031, USA&#39;, &#39;ShortLabel&#39;: &#39;4890-4998 W 92nd Ave&#39;, &#39;Addr_type&#39;: &#39;StreetAddress&#39;, &#39;Type&#39;: &#39;&#39;, &#39;PlaceName&#39;: &#39;&#39;, &#39;AddNum&#39;: &#39;4944&#39;, &#39;Address&#39;: &#39;4944 W 92nd Ave&#39;, &#39;Block&#39;: &#39;&#39;, &#39;Sector&#39;: &#39;&#39;, &#39;Neighborhood&#39;: &#39;South Central Westminster&#39;, &#39;District&#39;: &#39;&#39;, &#39;City&#39;: &#39;Westminster&#39;, &#39;MetroArea&#39;: &#39;Denver Metro Area&#39;, &#39;Subregion&#39;: &#39;Adams County&#39;, &#39;Region&#39;: &#39;Colorado&#39;, &#39;Territory&#39;: &#39;&#39;, &#39;Postal&#39;: &#39;80031&#39;, &#39;PostalExt&#39;: &#39;&#39;, &#39;CountryCode&#39;: &#39;USA&#39;}, &#39;location&#39;: {&#39;x&#39;: -105.05000999999999, &#39;y&#39;: 39.863412756606785, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}}
+52.47891000000004 -1.9059199999999805
+{&#39;address&#39;: {&#39;Match_addr&#39;: &#39;Paradise Circus, Birmingham, West Midlands, England, B3 3&#39;, &#39;LongLabel&#39;: &#39;Paradise Circus, Birmingham, West Midlands, England, B3 3, GBR&#39;, &#39;ShortLabel&#39;: &#39;Paradise Circus&#39;, &#39;Addr_type&#39;: &#39;StreetName&#39;, &#39;Type&#39;: &#39;&#39;, &#39;PlaceName&#39;: &#39;&#39;, &#39;AddNum&#39;: &#39;&#39;, &#39;Address&#39;: &#39;Paradise Circus&#39;, &#39;Block&#39;: &#39;&#39;, &#39;Sector&#39;: &#39;&#39;, &#39;Neighborhood&#39;: &#39;&#39;, &#39;District&#39;: &#39;Birmingham&#39;, &#39;City&#39;: &#39;Birmingham&#39;, &#39;MetroArea&#39;: &#39;&#39;, &#39;Subregion&#39;: &#39;West Midlands&#39;, &#39;Region&#39;: &#39;England&#39;, &#39;Territory&#39;: &#39;&#39;, &#39;Postal&#39;: &#39;B3 3&#39;, &#39;PostalExt&#39;: &#39;&#39;, &#39;CountryCode&#39;: &#39;GBR&#39;}, &#39;location&#39;: {&#39;x&#39;: -1.9059176525172958, &#39;y&#39;: 52.478913577205745, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}}
+47.38053000000008 -122.23740999999995
+{&#39;address&#39;: {&#39;Match_addr&#39;: &#39;200-226 4th Ave S, Kent, Washington, 98032&#39;, &#39;LongLabel&#39;: &#39;200-226 4th Ave S, Kent, WA, 98032, USA&#39;, &#39;ShortLabel&#39;: &#39;200-226 4th Ave S&#39;, &#39;Addr_type&#39;: &#39;StreetAddress&#39;, &#39;Type&#39;: &#39;&#39;, &#39;PlaceName&#39;: &#39;&#39;, &#39;AddNum&#39;: &#39;212&#39;, &#39;Address&#39;: &#39;212 4th Ave S&#39;, &#39;Block&#39;: &#39;&#39;, &#39;Sector&#39;: &#39;&#39;, &#39;Neighborhood&#39;: &#39;&#39;, &#39;District&#39;: &#39;&#39;, &#39;City&#39;: &#39;Kent&#39;, &#39;MetroArea&#39;: &#39;Seattle Metro Area&#39;, &#39;Subregion&#39;: &#39;King County&#39;, &#39;Region&#39;: &#39;Washington&#39;, &#39;Territory&#39;: &#39;&#39;, &#39;Postal&#39;: &#39;98032&#39;, &#39;PostalExt&#39;: &#39;&#39;, &#39;CountryCode&#39;: &#39;USA&#39;}, &#39;location&#39;: {&#39;x&#39;: -122.23733033180116, &#39;y&#39;: 47.3805288314415, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}}
+51.91438000000005 4.487160000000074
+{&#39;address&#39;: {&#39;Match_addr&#39;: &#39;Boompjes, 3011 Rotterdam&#39;, &#39;LongLabel&#39;: &#39;Boompjes, 3011 Rotterdam, NLD&#39;, &#39;ShortLabel&#39;: &#39;Boompjes&#39;, &#39;Addr_type&#39;: &#39;StreetName&#39;, &#39;Type&#39;: &#39;&#39;, &#39;PlaceName&#39;: &#39;&#39;, &#39;AddNum&#39;: &#39;&#39;, &#39;Address&#39;: &#39;Boompjes&#39;, &#39;Block&#39;: &#39;&#39;, &#39;Sector&#39;: &#39;&#39;, &#39;Neighborhood&#39;: &#39;Stadscentrum&#39;, &#39;District&#39;: &#39;&#39;, &#39;City&#39;: &#39;Rotterdam&#39;, &#39;MetroArea&#39;: &#39;&#39;, &#39;Subregion&#39;: &#39;Rotterdam&#39;, &#39;Region&#39;: &#39;Zuid-Holland&#39;, &#39;Territory&#39;: &#39;&#39;, &#39;Postal&#39;: &#39;3011&#39;, &#39;PostalExt&#39;: &#39;&#39;, &#39;CountryCode&#39;: &#39;NLD&#39;}, &#39;location&#39;: {&#39;x&#39;: 4.487159238654744, &#39;y&#39;: 51.91438113541226, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}}
+39.86347000000006 -105.05000999999999
+{&#39;address&#39;: {&#39;Match_addr&#39;: &#39;4890-4998 W 92nd Ave, Westminster, Colorado, 80031&#39;, &#39;LongLabel&#39;: &#39;4890-4998 W 92nd Ave, Westminster, CO, 80031, USA&#39;, &#39;ShortLabel&#39;: &#39;4890-4998 W 92nd Ave&#39;, &#39;Addr_type&#39;: &#39;StreetAddress&#39;, &#39;Type&#39;: &#39;&#39;, &#39;PlaceName&#39;: &#39;&#39;, &#39;AddNum&#39;: &#39;4944&#39;, &#39;Address&#39;: &#39;4944 W 92nd Ave&#39;, &#39;Block&#39;: &#39;&#39;, &#39;Sector&#39;: &#39;&#39;, &#39;Neighborhood&#39;: &#39;South Central Westminster&#39;, &#39;District&#39;: &#39;&#39;, &#39;City&#39;: &#39;Westminster&#39;, &#39;MetroArea&#39;: &#39;Denver Metro Area&#39;, &#39;Subregion&#39;: &#39;Adams County&#39;, &#39;Region&#39;: &#39;Colorado&#39;, &#39;Territory&#39;: &#39;&#39;, &#39;Postal&#39;: &#39;80031&#39;, &#39;PostalExt&#39;: &#39;&#39;, &#39;CountryCode&#39;: &#39;USA&#39;}, &#39;location&#39;: {&#39;x&#39;: -105.05000999999999, &#39;y&#39;: 39.863412756606785, &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="result-map-of-the-above-code">
+<h3>Result Map of the above code<a class="headerlink" href="#result-map-of-the-above-code" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "0a1250e0d60a418d8a090628ae5ea00f", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><div class="map-static-img-preview-ada083a5-e98a-4781-9ca1-bec5ecdc24d0"><img src=""></img></div></div><div class="output text_html"><div class="map-html-embed-preview-ada083a5-e98a-4781-9ca1-bec5ecdc24d0"></div></div></div>
+</div>
+<p><img alt="" src="../_images/resmap1.png" /></p>
+</div>
+</div>
+<div class="section" id="example-to-find-the-address-of-the-given-latitude-and-longitude">
+<h2>Example to Find the address of the Given latitude and longitude<a class="headerlink" href="#example-to-find-the-address-of-the-given-latitude-and-longitude" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">arcgis.geometry</span> <span class="kn">import</span> <span class="n">Point</span>
+<span class="n">location</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="mf">39.86347000000006</span><span class="p">,</span>                 <span class="c1"># `Y` is latitude</span>
+     <span class="s1">&#39;X&#39;</span><span class="p">:</span>  <span class="o">-</span><span class="mf">105.05000999999999</span><span class="p">,</span>               <span class="c1"># `X` is longitude</span>
+     <span class="s1">&#39;spatialReference&#39;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="s1">&#39;wkid&#39;</span><span class="p">:</span><span class="mi">4326</span>
+     <span class="p">}</span>
+<span class="p">}</span>
+<span class="n">unknown_pt</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="n">location</span><span class="p">)</span>
+<span class="n">address</span> <span class="o">=</span> <span class="n">reverse_geocode</span><span class="p">(</span><span class="n">location</span><span class="o">=</span><span class="n">unknown_pt</span><span class="p">)</span>
+<span class="n">address</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;address&#39;: {&#39;Match_addr&#39;: &#39;4890-4998 W 92nd Ave, Westminster, Colorado, 80031&#39;,
+  &#39;LongLabel&#39;: &#39;4890-4998 W 92nd Ave, Westminster, CO, 80031, USA&#39;,
+  &#39;ShortLabel&#39;: &#39;4890-4998 W 92nd Ave&#39;,
+  &#39;Addr_type&#39;: &#39;StreetAddress&#39;,
+  &#39;Type&#39;: &#39;&#39;,
+  &#39;PlaceName&#39;: &#39;&#39;,
+  &#39;AddNum&#39;: &#39;4944&#39;,
+  &#39;Address&#39;: &#39;4944 W 92nd Ave&#39;,
+  &#39;Block&#39;: &#39;&#39;,
+  &#39;Sector&#39;: &#39;&#39;,
+  &#39;Neighborhood&#39;: &#39;South Central Westminster&#39;,
+  &#39;District&#39;: &#39;&#39;,
+  &#39;City&#39;: &#39;Westminster&#39;,
+  &#39;MetroArea&#39;: &#39;Denver Metro Area&#39;,
+  &#39;Subregion&#39;: &#39;Adams County&#39;,
+  &#39;Region&#39;: &#39;Colorado&#39;,
+  &#39;Territory&#39;: &#39;&#39;,
+  &#39;Postal&#39;: &#39;80031&#39;,
+  &#39;PostalExt&#39;: &#39;&#39;,
+  &#39;CountryCode&#39;: &#39;USA&#39;},
+ &#39;location&#39;: {&#39;x&#39;: -105.05000999999999,
+  &#39;y&#39;: 39.863412756606785,
+  &#39;spatialReference&#39;: {&#39;wkid&#39;: 4326, &#39;latestWkid&#39;: 4326}}}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="draw-a-map-for-above-address">
+<h3>Draw a map for above address<a class="headerlink" href="#draw-a-map-for-above-address" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="n">my_gis</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;USA&quot;</span><span class="p">,</span> <span class="n">zoomlevel</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">address</span><span class="p">)</span>
+<span class="n">m</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<script type="application/vnd.jupyter.widget-view+json">
+{"model_id": "037a569de7634019b680c1e36d5a1b3a", "version_major": 2, "version_minor": 0}
+</script><div class="output text_html"><div class="map-static-img-preview-4b7941a7-58fe-4e27-86c5-325088c7fc90"><img src=""></img></div></div><div class="output text_html"><div class="map-html-embed-preview-4b7941a7-58fe-4e27-86c5-325088c7fc90"></div></div></div>
+</div>
+<p><img alt="" src="../_images/resmap2.png" /></p>
+</div>
+</div>
+<div class="section" id="map-can-be-save-as-html-file">
+<h2>map can be save as html file<a class="headerlink" href="#map-can-be-save-as-html-file" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;C:\Users\Mohanapriya\city_map.html&quot;</span>
+<span class="n">m</span><span class="o">.</span><span class="n">export_to_html</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">webbrowser</span>
+<span class="n">webbrowser</span><span class="o">.</span><span class="n">open_new</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:2000/&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./mapping"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Mapping</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Shanmugapriya<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

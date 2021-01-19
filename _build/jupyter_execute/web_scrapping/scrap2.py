@@ -41,7 +41,7 @@ import pandas as pd
 # 
 # 
 
-# In[2]:
+# In[5]:
 
 
 pagesToGet= 1
@@ -65,7 +65,7 @@ print(key)
 # 
 # and the result stored in the csv file named <b>"search_res.csv" </b>
 
-# In[9]:
+# In[7]:
 
 
 for page in range(1,pagesToGet+1):
@@ -100,7 +100,7 @@ f.close()
 # 
 # here in a page there are 10 links are displayed. The title of the news related to keyword and published url and published date are stored in the csv file.
 
-# In[12]:
+# In[8]:
 
 
 data=pd.DataFrame(resultframe, columns=['Statement','Link','Date'])
@@ -111,7 +111,7 @@ print(data)
 # 
 # using the article package, we can display the various properties of news article like title of the news, summary of the news, meta description etc., we can take the link of the above result i.e data DataFrame.
 
-# In[13]:
+# In[9]:
 
 
 data['Link']
@@ -119,7 +119,7 @@ data['Link']
 
 # ### installing the package
 
-# In[15]:
+# In[10]:
 
 
 get_ipython().system('pip install newspaper3k')
@@ -127,13 +127,13 @@ get_ipython().system('pip install newspaper3k')
 
 # ### importing the package
 
-# In[16]:
+# In[11]:
 
 
 from newspaper import Article 
 
 
-# In[17]:
+# In[12]:
 
 
 url = data['Link'][1] #for example take a first result link
@@ -141,7 +141,7 @@ url = data['Link'][1] #for example take a first result link
 
 # ### apply parsing to know the properties of news article easily
 
-# In[19]:
+# In[13]:
 
 
 res_article = Article(url, language="en") # en for English 

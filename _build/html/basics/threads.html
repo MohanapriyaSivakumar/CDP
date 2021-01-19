@@ -279,6 +279,20 @@
     <i class="fas fa-chevron-down">
     </i>
    </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../mapping/intro.html">
+     Mapping
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mapping/mapping_code.html">
+       Mapping using Python
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -433,8 +447,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Worker: 0
-Worker: 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Worker: 0Worker: 1
+
 Worker: 2
 Worker: 3
 Worker: 4
@@ -506,16 +520,22 @@ notifying the other threads that they can continue.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 03:21:40,022 (c1) Starting consumer thread
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-19 15:03:00,243 (c1) Starting consumer thread
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 03:21:40,225 (c2) Starting consumer thread
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-19 15:03:00,449 (c2) Starting consumer thread
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 03:21:40,432 (p ) Starting producer thread
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-19 15:03:00,666 (p ) Starting producer thread
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-18 03:21:40,441 (p ) Making resource available
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-19 15:03:00,673 (p ) Making resource available
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-19 15:03:00,676 (c2) Resource is available to consumer
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2021-01-19 15:03:00,678 (c1) Resource is available to consumer
 </pre></div>
 </div>
 </div>

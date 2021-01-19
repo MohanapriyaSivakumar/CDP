@@ -56,6 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mapping" href="../mapping/intro.html" />
     <link rel="prev" title="Web Scraping" href="scrape_intro.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -272,6 +273,20 @@
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
        Newspaper scraping
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../mapping/intro.html">
+     Mapping
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../mapping/mapping_code.html">
+       Mapping using Python
       </a>
      </li>
     </ul>
@@ -528,8 +543,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter the query: covid 19
-covid+19
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter the query: covid 19 vaccination
+covid+19+vaccination
 </pre></div>
 </div>
 </div>
@@ -573,8 +588,8 @@ covid+19
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>processing page : 1
-https://www.bbc.co.uk/search?q=covid+19+article&amp;page=1
-10
+https://www.bbc.co.uk/search?q=covid+19+vaccination+article&amp;page=1
+2
 </pre></div>
 </div>
 </div>
@@ -592,28 +607,12 @@ https://www.bbc.co.uk/search?q=covid+19+article&amp;page=1
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                           Statement  \
-0  BBC Inside Science: Coronavirus conspiracy, Li...   
-1  Covid: Biden vows 100m vaccinations for US in ...   
-2  Coronavirus: Third West Yorkshire bed factory ...   
-3  US election 2020: Biden takes Georgia to solid...   
-4           Coronavirus in Sudan exposes new leaders   
-5  BCG: Can a vaccine from 1921 save lives from C...   
-6  Shoprite: Africa&#39;s biggest supermarket conside...   
-7  Coronavirus in Africa: &#39;Signs of hope&#39; as case...   
-8  Coronavirus: Calls to protect &#39;vital&#39; warehous...   
-9  Letter from Africa: Spare a thought for strand...   
+0  Covid: Biden vows 100m vaccinations for US in ...   
+1  Coronavirus in South Africa: Two-day-old baby ...   
 
                                                 Link         Date  
-0          https://www.bbc.co.uk/programmes/m000k325  18 Jun 2020  
-1  https://www.bbc.co.uk/news/world-us-canada-552...   9 Dec 2020  
-2  https://www.bbc.co.uk/news/uk-england-leeds-53...  13 Jul 2020  
-3  https://www.bbc.co.uk/news/election-us-2020-54...  14 Nov 2020  
-4   https://www.bbc.co.uk/news/world-africa-52735520  25 May 2020  
-5         https://www.bbc.co.uk/news/health-54465733  11 Oct 2020  
-6   https://www.bbc.co.uk/news/world-africa-53637506   3 Aug 2020  
-7   https://www.bbc.co.uk/news/world-africa-53847699  20 Aug 2020  
-8  https://www.bbc.co.uk/news/uk-england-south-yo...   2 Apr 2020  
-9   https://www.bbc.co.uk/news/world-africa-52645702  17 May 2020  
+0  https://www.bbc.co.uk/news/world-us-canada-552...   9 Dec 2020  
+1   https://www.bbc.co.uk/news/world-africa-52752334  21 May 2020  
 </pre></div>
 </div>
 </div>
@@ -629,16 +628,8 @@ https://www.bbc.co.uk/search?q=covid+19+article&amp;page=1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0            https://www.bbc.co.uk/programmes/m000k325
-1    https://www.bbc.co.uk/news/world-us-canada-552...
-2    https://www.bbc.co.uk/news/uk-england-leeds-53...
-3    https://www.bbc.co.uk/news/election-us-2020-54...
-4     https://www.bbc.co.uk/news/world-africa-52735520
-5           https://www.bbc.co.uk/news/health-54465733
-6     https://www.bbc.co.uk/news/world-africa-53637506
-7     https://www.bbc.co.uk/news/world-africa-53847699
-8    https://www.bbc.co.uk/news/uk-england-south-yo...
-9     https://www.bbc.co.uk/news/world-africa-52645702
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0    https://www.bbc.co.uk/news/world-us-canada-552...
+1     https://www.bbc.co.uk/news/world-africa-52752334
 Name: Link, dtype: object
 </pre></div>
 </div>
@@ -653,61 +644,33 @@ Name: Link, dtype: object
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting newspaper3k
-  Using cached newspaper3k-0.2.8-py3-none-any.whl (211 kB)
-Requirement already satisfied: cssselect&gt;=0.9.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (1.1.0)
-Collecting tldextract&gt;=2.0.1
-  Using cached tldextract-3.1.0-py2.py3-none-any.whl (87 kB)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: newspaper3k in c:\users\mohanapriya\anaconda3\lib\site-packages (0.2.8)
+Requirement already satisfied: PyYAML&gt;=3.11 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (5.3.1)
+Requirement already satisfied: feedparser&gt;=5.2.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (6.0.2)
 Requirement already satisfied: python-dateutil&gt;=2.5.3 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (2.8.1)
-Collecting jieba3k&gt;=0.35.1
-  Using cached jieba3k-0.35.1.zip (7.4 MB)
-Collecting tinysegmenter==0.3
-  Using cached tinysegmenter-0.3.tar.gz (16 kB)
-Collecting feedparser&gt;=5.2.1
-  Using cached feedparser-6.0.2-py3-none-any.whl (80 kB)
+Requirement already satisfied: beautifulsoup4&gt;=4.4.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (4.9.1)
 Requirement already satisfied: nltk&gt;=3.2.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (3.5)
 Requirement already satisfied: requests&gt;=2.10.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (2.24.0)
+Requirement already satisfied: tldextract&gt;=2.0.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (3.1.0)
+Requirement already satisfied: tinysegmenter==0.3 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (0.3)
 Requirement already satisfied: Pillow&gt;=3.3.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (7.2.0)
-Requirement already satisfied: beautifulsoup4&gt;=4.4.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (4.9.1)
 Requirement already satisfied: lxml&gt;=3.6.0 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (4.5.2)
-Collecting feedfinder2&gt;=0.0.4
-  Using cached feedfinder2-0.0.4.tar.gz (3.3 kB)
-Requirement already satisfied: PyYAML&gt;=3.11 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (5.3.1)
-Requirement already satisfied: idna in c:\users\mohanapriya\anaconda3\lib\site-packages (from tldextract&gt;=2.0.1-&gt;newspaper3k) (2.10)
-Requirement already satisfied: filelock&gt;=3.0.8 in c:\users\mohanapriya\anaconda3\lib\site-packages (from tldextract&gt;=2.0.1-&gt;newspaper3k) (3.0.12)
-Collecting requests-file&gt;=1.4
-  Using cached requests_file-1.5.1-py2.py3-none-any.whl (3.7 kB)
+Requirement already satisfied: feedfinder2&gt;=0.0.4 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (0.0.4)
+Requirement already satisfied: jieba3k&gt;=0.35.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (0.35.1)
+Requirement already satisfied: cssselect&gt;=0.9.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from newspaper3k) (1.1.0)
+Requirement already satisfied: sgmllib3k in c:\users\mohanapriya\anaconda3\lib\site-packages (from feedparser&gt;=5.2.1-&gt;newspaper3k) (1.0.0)
 Requirement already satisfied: six&gt;=1.5 in c:\users\mohanapriya\anaconda3\lib\site-packages (from python-dateutil&gt;=2.5.3-&gt;newspaper3k) (1.15.0)
-Collecting sgmllib3k
-  Using cached sgmllib3k-1.0.0.tar.gz (5.8 kB)
+Requirement already satisfied: soupsieve&gt;1.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from beautifulsoup4&gt;=4.4.1-&gt;newspaper3k) (2.0.1)
 Requirement already satisfied: regex in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (2020.6.8)
-Requirement already satisfied: click in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (7.1.2)
 Requirement already satisfied: tqdm in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (4.47.0)
 Requirement already satisfied: joblib in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (0.16.0)
-Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (1.25.9)
-Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (2020.6.20)
+Requirement already satisfied: click in c:\users\mohanapriya\anaconda3\lib\site-packages (from nltk&gt;=3.2.1-&gt;newspaper3k) (7.1.2)
+Requirement already satisfied: idna&lt;3,&gt;=2.5 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (2.10)
 Requirement already satisfied: chardet&lt;4,&gt;=3.0.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (3.0.4)
-Requirement already satisfied: soupsieve&gt;1.2 in c:\users\mohanapriya\anaconda3\lib\site-packages (from beautifulsoup4&gt;=4.4.1-&gt;newspaper3k) (2.0.1)
-Building wheels for collected packages: jieba3k, tinysegmenter, feedfinder2, sgmllib3k
-  Building wheel for jieba3k (setup.py): started
-  Building wheel for jieba3k (setup.py): finished with status &#39;done&#39;
-  Created wheel for jieba3k: filename=jieba3k-0.35.1-py3-none-any.whl size=7398410 sha256=711e29fc8afc715e0631851856f61038e6efdc8b2794938c73af5c0978d7c99e
-  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\1f\7e\0c\54f3b0f5164278677899f2db08f2b07943ce2d024a3c862afb
-  Building wheel for tinysegmenter (setup.py): started
-  Building wheel for tinysegmenter (setup.py): finished with status &#39;done&#39;
-  Created wheel for tinysegmenter: filename=tinysegmenter-0.3-py3-none-any.whl size=13542 sha256=791b1338eb28143a5445431beaf0f6019f4983196034b956178a7a6d70a03a5d
-  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\99\74\83\8fac1c8d9c648cfabebbbffe97a889f6624817f3aa0bbe6c09
-  Building wheel for feedfinder2 (setup.py): started
-  Building wheel for feedfinder2 (setup.py): finished with status &#39;done&#39;
-  Created wheel for feedfinder2: filename=feedfinder2-0.0.4-py3-none-any.whl size=3359 sha256=e2bb1d8c413f997bdec226e74b0c496b607f314331c5ca38636d42de4322ed36
-  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\b6\09\68\a9f15498ac02c23dde29f18745bc6a6f574ba4ab41861a3575
-  Building wheel for sgmllib3k (setup.py): started
-  Building wheel for sgmllib3k (setup.py): finished with status &#39;done&#39;
-  Created wheel for sgmllib3k: filename=sgmllib3k-1.0.0-py3-none-any.whl size=6071 sha256=96e616f95afb00829d458448de5bea3354e750eaea36a13afee97a0227eb9eb5
-  Stored in directory: c:\users\mohanapriya\appdata\local\pip\cache\wheels\83\63\2f\117884c3b19d46b64d3d61690333aa80c88dc14050e269c546
-Successfully built jieba3k tinysegmenter feedfinder2 sgmllib3k
-Installing collected packages: requests-file, tldextract, jieba3k, tinysegmenter, sgmllib3k, feedparser, feedfinder2, newspaper3k
-Successfully installed feedfinder2-0.0.4 feedparser-6.0.2 jieba3k-0.35.1 newspaper3k-0.2.8 requests-file-1.5.1 sgmllib3k-1.0.0 tinysegmenter-0.3 tldextract-3.1.0
+Requirement already satisfied: certifi&gt;=2017.4.17 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (2020.6.20)
+Requirement already satisfied: urllib3!=1.25.0,!=1.25.1,&lt;1.26,&gt;=1.21.1 in c:\users\mohanapriya\anaconda3\lib\site-packages (from requests&gt;=2.10.0-&gt;newspaper3k) (1.25.9)
+Requirement already satisfied: requests-file&gt;=1.4 in c:\users\mohanapriya\anaconda3\lib\site-packages (from tldextract&gt;=2.0.1-&gt;newspaper3k) (1.5.1)
+Requirement already satisfied: filelock&gt;=3.0.8 in c:\users\mohanapriya\anaconda3\lib\site-packages (from tldextract&gt;=2.0.1-&gt;newspaper3k) (3.0.12)
 </pre></div>
 </div>
 </div>
@@ -863,6 +826,7 @@ Follow BBC Yorkshire on Facebook, Twitter and Instagram. Send your story ideas t
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="scrape_intro.html" title="previous page">Web Scraping</a>
+    <a class='right-next' id="next-link" href="../mapping/intro.html" title="next page">Mapping</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

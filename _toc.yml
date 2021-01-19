@@ -41,3 +41,6 @@
     - file: web_scrapping/scrape_intro
       sections:
         - file: web_scrapping/scrap2
+    - file: mapping/intro
+      sections:
+        - file: mapping/mapping_code
